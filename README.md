@@ -1,14 +1,12 @@
 # timetracker
 
-## install
+## install and run
 
 1. git clone https://github.com/lordfornax/timetracker.git
+2. cd timetracker
 2. npm install
 3. tsc
-
-## run
-
-1. node app.js
+4. node app.js
 
 ## in browser
 

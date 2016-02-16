@@ -1,10 +1,10 @@
 [{
-	"name": "teszt1",
-	"subcategories": ["teszt1 1", "teszt1 2"]
+	"name": "Teszt projekt",
+	"subcategories": ["Előkészítés", "Megbeszélés", "Frontend", "Backend", "Tesztelés"]
 }, {
-	"name": "teszt alma",
-	"subcategories": [":D", ":P"]
+	"name": "MARVEL",
+	"subcategories": ["Thor", "Hulk", "Jessica Jones", "Romanov"]
 }, {
-	"name": "teszt 3",
-	"subcategories": []
+	"name": "TimeTracker projekt",
+	"subcategories": ["Kutatómunka", "Programozás", "Adatvesztés", "Fájlok visszaállítása"]
 }]

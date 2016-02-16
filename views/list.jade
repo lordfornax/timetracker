@@ -1,0 +1,23 @@
+.col-lg-10
+	a.btn.btn-primary([routerLink]="['/Add']") Új tevékenység
+	a.btn.btn-primary([routerLink]="['/Report']") Napi riport készítése
+	
+	table.table(*ngIf="items && items.length && categories")
+		thead
+			tr
+				th kategória / alkategória
+				th -tól
+				th -ig
+				th megjegyzés
+				th &nbsp;
+		tbody
+			tr(*ngFor="#item of items")
+				td
+					| {{categories[item.category] ? categories[item.category].name : ''}} /
+					| {{categories[item.category] ? categories[item.category].subcategories[item.subcategory] : ''}}
+				td {{item.from}}
+				td {{item.to}}
+				td {{item.note}}
+				td
+					button.btn.btn-danger.btn-xs(type='button', (click)='delItem(item._id)')
+						span.glyphicon.glyphicon-trash

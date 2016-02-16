@@ -1,0 +1,41 @@
+.col-lg-10
+	a.btn.btn-primary([routerLink]="['/Home']") Vissza
+	a.btn.btn-primary((click)="sendMail()") Küldés emailban
+	a.btn.btn-primary((click)="print()") Nyomtatás
+	
+	h2 Riport készítése ({{date}})
+
+	form([ngFormModel]='form')
+		div Riport megtekintése a következő napról:
+			input(type="date" ngControl="date", (change)="refresh($event.target.value)")
+	
+	div(*ngIf="aggregated && aggregated.length && categories")
+		table.table(*ngFor="#agg of aggregated; #i = index")
+			thead
+				tr
+					th(colspan="3") {{agg.catText}}
+			tbody(*ngIf="agg.subcats")
+				tr(*ngFor="#sc of agg.subcats")
+					td(width="200") {{sc.scatText}}
+					td(width="200") {{sc.timespentStr}} - {{sc.timespent}} óra
+					td
+						ul(*ngIf="sc.notes.length")
+							li(*ngFor="#note of sc.notes") {{note}}
+			tfoot
+				tr.info
+					td Összesen idő:
+					td(colspan="3") {{agg.timespentStr}} - {{agg.timespent}} óra
+
+	//
+		table.table(*ngIf="items && items.length && categories")
+			thead
+				tr
+					th kategória / alkategória
+					th megjegyzés
+			
+			tbody
+				tr(*ngFor="#item of items")
+					td
+						| {{categories[item.category] ? categories[item.category].name : ''}} /
+						| {{categories[item.category] ? categories[item.category].subcategories[item.subcategory] : ''}}
+					td {{item.note}}

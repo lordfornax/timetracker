@@ -1,0 +1,29 @@
+doctype html
+html(lang="en" data-framework="angular2")
+	head
+		meta(charset="utf-8")
+		title TimeTracker
+		script(src="node_modules/angular2/bundles/angular2-polyfills.js")
+		script(src="node_modules/systemjs/dist/system.src.js")
+		script(src="node_modules/rxjs/bundles/Rx.js")
+		script(src="node_modules/angular2/bundles/angular2.dev.js")
+		script(src="node_modules/angular2/bundles/http.dev.js")
+		script(src="node_modules/angular2/bundles/router.dev.js")
+		script(src="node_modules/jquery/dist/jquery.min.js")
+		script(src="node_modules/bootstrap/dist/js/bootstrap.min.js")
+		link(rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css")
+		base(href="/")
+
+	body
+		timetracker
+			
+		script.
+			System.config({
+				packages: {
+					'app': {
+						format: 'cjs',
+						defaultExtension: 'js'
+					}
+				}
+			});
+			System.import('app/bootstrap');

@@ -1,0 +1,10 @@
+[{
+	"name": "teszt1",
+	"subcategories": ["teszt1 1", "teszt1 2"]
+}, {
+	"name": "teszt alma",
+	"subcategories": [":D", ":P"]
+}, {
+	"name": "teszt 3",
+	"subcategories": []
+}]

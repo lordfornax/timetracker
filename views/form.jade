@@ -1,0 +1,46 @@
+.col-lg-6
+	h2 Új tevékenység rögzítése
+
+	form([ngFormModel]='form', (submit)='checkForm()')
+		.form-group
+			label.control-label Kategória és alkategória
+			div
+				select.form-control(*ngIf='categories && categories.length', ngControl='category', (change)='catIndex=$event.target.value')
+					option(value='-1')  - kategória -
+					option(*ngFor='#cat of categories; #i = index', value='{{i}}') {{cat.name}}
+				
+				select.form-control(*ngIf='catIndex', ngControl='subcategory')
+					option(value='-1')  - alkategória -
+					option(*ngFor='#subcat of categories[catIndex].subcategories; #i = index', value='{{i}}') {{subcat}}
+				
+				p.alert.alert-danger(*ngIf='(form.controls.category.touched && form.controls.subcategory.touched) &&\
+					(!form.controls.category.valid || !form.controls.subcategory.valid)')
+					span.glyphicon.glyphicon-exclamation-sign(aria-hidden='true')
+					| Kategória és alkategória kiválasztása kötelező!
+			
+		.form-group
+			.input-group
+				label Intervallum
+				input.form-control(type='text', ngControl='from', placeholder='yyyy-mm-dd hh:ii')
+				input.form-control(type='text', ngControl='to', placeholder='yyyy-mm-dd hh:ii')
+			
+				p.alert.alert-danger(*ngIf='(form.controls.from.touched || form.controls.to.touched) &&\
+					(!form.controls.from.valid || !form.controls.to.valid)')
+					span(*ngIf='((form.controls.from.errors && form.controls.from.errors.required) ||\
+						(form.controls.to.errors && form.controls.to.errors.required))')
+						| Intervallum kiválasztása kötelező!
+					span(*ngIf='((form.controls.from.errors && form.controls.from.errors.isDateTime) ||\
+						(form.controls.to.errors && form.controls.to.errors.isDateTime))')
+						| Hibás formátum!
+						
+		.form-group
+			textarea.form-control(ngControl='note', rows='8', cols='40')
+			p.alert.alert-danger(*ngIf='apiError')
+				span.glyphicon.glyphicon-exclamation-sign(aria-hidden='true')
+				| {{apiError}}
+		
+		.form-group
+			div
+				a.btn.btn-primary([routerLink]="['/Home']") Mégse
+				button.btn.btn-default(*ngIf='form.valid') Mentés
+		

@@ -1,0 +1,23 @@
+{
+    "private": true,
+    "name": "timetracker",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "tsc --watch",
+        "start": "nodemon app.js"
+    },
+    "devDependencies": {
+        "typescript": "1.7.5"
+    },
+    "dependencies": {
+        "angular2": "2.0.0-beta.0",
+        "systemjs": "0.19.6",
+        "rxjs": "5.0.0-beta.0",
+        "express": "3.4.0",
+        "mongoose": "3.8.3",
+		"bootstrap": "3.3.6",
+		"jquery": "2.2.0",
+		"jade": "1.11.0"
+    }
+}

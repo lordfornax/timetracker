@@ -1,5 +1,11 @@
 # timetracker
 
+## required programs
+
+1. mongodb 3.0.9
+2. nodejs 5.6.0
+2. npm 3.6.0
+
 ## install and run
 
 1. git clone https://github.com/lordfornax/timetracker.git

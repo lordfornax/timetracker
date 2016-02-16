@@ -12,4 +12,4 @@
 
 ## in browser
 
-localhost:8888
+1. http://localhost:8888

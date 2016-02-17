@@ -1,13 +1,13 @@
 .col-lg-10
-	a.btn.btn-primary([routerLink]="['/Home']") Vissza
-	a.btn.btn-primary((click)="sendMail()") Küldés emailban
-	a.btn.btn-primary((click)="print()") Nyomtatás
+	.btn-group
+		a.btn.btn-primary([routerLink]="['/Home']") Vissza
+		a.btn.btn-primary((click)="print()") Nyomtatás
 	
 	h2 Riport készítése ({{date}})
 
-	form([ngFormModel]='form')
+	form.form-inline([ngFormModel]='form')
 		div Riport megtekintése a következő napról:
-			input(type="date" ngControl="date", (change)="refresh($event.target.value)")
+			input.form-control(type="date" ngControl="date", (change)="refresh($event.target.value)")
 	
 	div(*ngIf="aggregated && aggregated.length && categories")
 		table.table(*ngFor="#agg of aggregated; #i = index")

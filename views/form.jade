@@ -21,8 +21,8 @@
 		.form-group
 			.input-group
 				label Intervallum
-				input.form-control(type='text', ngControl='from', placeholder='yyyy-mm-dd hh:ii')
-				input.form-control(type='text', ngControl='to', placeholder='yyyy-mm-dd hh:ii')
+				input.form-control.col-xs-2(type='text', ngControl='from', placeholder='yyyy-mm-dd hh:ii')
+				input.form-control.col-xs-2(type='text', ngControl='to', placeholder='yyyy-mm-dd hh:ii')
 			
 				p.alert.alert-danger(*ngIf='(form.controls.from.touched || form.controls.to.touched) &&\
 					(!form.controls.from.valid || !form.controls.to.valid)')

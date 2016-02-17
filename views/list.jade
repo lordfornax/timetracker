@@ -1,6 +1,7 @@
 .col-lg-10
-	a.btn.btn-primary([routerLink]="['/Add']") Új tevékenység
-	a.btn.btn-primary([routerLink]="['/Report']") Napi riport készítése
+	.btn-group
+		a.btn.btn-primary([routerLink]="['/Add']") Új tevékenység
+		a.btn.btn-primary([routerLink]="['/Report']") Napi riport készítése
 	
 	table.table(*ngIf="items && items.length && categories")
 		thead
